@@ -1,0 +1,2 @@
+Implements a small regex engine by simmulating a nondeterministic finite state automaton using linear algebra over the $F_2$ field: The state vector is represented by a (sparse) vector where each entry is $1$ if the state is active and $0$ if not. The transition function is represented by a matrix $A$ where $A_{ij}$ is $1$ if a transition from $i$ to $j$ is allowed, and $0$ if not.
+The program takes a regex as input, and constructs an NFA that detects the regex using Thompson's algorithm.
