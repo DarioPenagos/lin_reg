@@ -16,7 +16,6 @@ struct Args {
     /// File to scan
     #[arg(short, long)]
     file: PathBuf,
-
     /// Regex to consider
     #[arg(short, long)]
     regex: String,
@@ -33,7 +32,7 @@ fn main() -> std::io::Result<()> {
     for l in file.lines() {
         let mut matcher = automaton::Match::new(&automaton);
         if matcher.recognizes(l) {
-            println!("{l}")
+            println!("{l}");
         }
     }
     Ok(())
