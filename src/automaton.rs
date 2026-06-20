@@ -166,7 +166,7 @@ impl Automaton {
         }
     }
 
-    fn from_regex_node(node: RegexNode) -> Self {
+    pub fn from_regex_node(node: RegexNode) -> Self {
         match node.clone() {
             RegexNode::Concat(a, b) => {
                 Self::concat(Self::from_regex_node(*a), Self::from_regex_node(*b))
